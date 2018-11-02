@@ -1,0 +1,43 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_tree_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff">
+        <TextView
+            android:id="@+id/text_first_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:text="¥222.22"
+            android:textColor="#E6E6E6"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/text_first_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10月10日" />
+
+        <TextView
+            android:id="@+id/text_first_day_of_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_first_time"
+            android:text="周二"
+            android:textColor="#E6E6E6" />
+        <View
+            android:background="#ffff"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+</LinearLayout>

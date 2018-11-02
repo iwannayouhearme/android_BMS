@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/top_ll_header"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/homepage_title"
+    android:paddingBottom="@dimen/default_margin"
+    >
+
+    <ImageView
+        android:id="@+id/top_iv_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="onClick"
+        android:paddingLeft="@dimen/default_margin"
+        android:paddingRight="20dp"
+        android:src="@mipmap/control_arrow_white3x"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/top_iv_left_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/top_iv_left"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/top_iv_left"
+        android:paddingBottom="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="5dp"
+        android:src="@mipmap/common_icon_close_new"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/top_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="50dp"
+        android:text="中间"
+        android:layout_marginStart="50dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="19sp"/>
+
+    <ImageView
+        android:id="@+id/top_iv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="onClick"
+        android:paddingRight="@dimen/default_margin"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:src="@mipmap/meeting_icon_edit2x"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/top_tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="onClick"
+        android:paddingEnd="@dimen/default_margin"
+        android:paddingRight="@dimen/default_margin"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:text="数据同步"
+        android:textColor="@color/white"
+        android:visibility="gone"/>
+
+</RelativeLayout>

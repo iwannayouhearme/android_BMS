@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BMS</string>
+    <string name="login">登录</string>
+    <string name="user_name">账 号:</string>
+    <string name="password">密 码:</string>
+    <string name="empty_message">啥也没有</string>
+    <string name="empty_button">重试</string>
+</resources>

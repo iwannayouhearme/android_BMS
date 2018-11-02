@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@mipmap/control_radio_selected2x" android:state_checked="true" /><!--选中时效果-->
+    <item android:drawable="@mipmap/control_radio_default2x" android:state_checked="false" /><!--未选中时效果-->
+</selector>

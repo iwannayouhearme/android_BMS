@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 四类字体大小 -->
+
+    <!--新的字体大小-->
+    <dimen name="text_small">16.0sp</dimen>
+
+    <dimen name="default_margin">10.0dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="item_decoration_title_start_margin">20dp</dimen>
+
+    <!--列表标题-->
+    <!--通讯录切换框-->
+    <dimen name="contact_change_height">450dp</dimen>
+    <dimen name="contact_change_width">350dp</dimen>
+    <dimen name="corevalue_change_height">350dp</dimen>
+    <dimen name="corevalue_change_width">300dp</dimen>
+    <!--会议发布弹出框-->
+    <dimen name="more_window_item_margin">12dp</dimen>
+
+    <!-- -->
+
+    <!--会议选择地点弹出框-->
+    <dimen name="meeting_place_height">450dp</dimen>
+    <dimen name="meeting_place_width">280dp</dimen>
+</resources>

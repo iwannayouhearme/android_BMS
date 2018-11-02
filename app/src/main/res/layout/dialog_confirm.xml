@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/backround_white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_confirm_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/meeting_dialog_bg_blue_top"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="标题"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:id="@+id/dialog_confirm_tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_personal_modify_tv_title"
+            android:layout_margin="10dp"
+            android:gravity="center_vertical"
+            android:hint="内容"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dialog_confirm_btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/ll_blue_for_corevalue"
+                android:text="取消"
+                android:textColor="#1886e3"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/dialog_confirm_btn_sure"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_back_blue"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

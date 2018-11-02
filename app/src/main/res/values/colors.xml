@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1886E3</color>
+    <color name="float_transparent">#00000000</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <color name="colorPrimaryDark">#303F9F</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#1886E3</color>
+    <color name="tab_text_normal">#212121</color>
+    <color name="black_btn_disabled">#000000</color>
+    <color name="black_text">#121010</color>
+    <color name="black">#333333</color>
+    <color name="gray_btn_normal">#707070</color>
+    <color name="gray">#646464</color>
+    <color name="white">#ffffff</color>
+    <color name="gray_backround">#EAEEEF</color>
+    <color name="homepage_title">#1587ee</color>
+    <color name="white_trp">#2effffff</color>
+    <color name="fulltransparent">#00000000</color>
+    <color name="gray_half">#dedede</color>
+    <color name="gray_text">#999999</color>
+    <color name="gray_text_light">#666666</color>
+    <color name="gray_personal">#ececec</color>
+    <color name="login_backround">#1787e3</color>
+    <color name="position">#858C93</color>
+    <color name="item_foot_backround">#F7F7F7</color>
+
+    <!--common-->
+    <color name="common_bg_et">#F7F7F7</color>
+    <color name="loading_text_color">#98adc8</color>
+    <!--common-->
+    <!--新闻页面-->
+    <color name="news_gray_backround">#EBEFF0</color>
+    <!-- 已办 已发起 按钮-->
+    <color name="green_agree">#1ABC9C</color>
+    <color name="red_turn_down">#e74c3c</color>
+    <color name="gray_pending">#B3C9DB</color>
+    <!-- 流程申请 -->
+    <color name="gray_value">#bababa</color>
+
+    <!-- 流程审批 -->
+    <color name="backround_eaa_gray">#f6f8f9</color>
+
+    <color name="default_item">#f4f4f4</color>
+
+    <color name="blue_title">#1886e3</color>
+
+    <color name="gray_dir">#F1F1F1</color>
+
+    <!--会议-->
+    <color name="meeting_inbox_sure_blue">#3093E6</color>
+    <color name="meeting_inbox_trun_down_gray">#BCBCBC</color>
+    <color name="meeting_box_backround">#EAEEEF</color>
+    <color name="meeting_detail_num">#666666</color>
+    <color name="meeting_end_btn">#C9C9C9</color>
+
+
+    <color name="find_code_backround">#C0C0C0</color>
+
+    <color name="grid_item_line">#EAEAEC</color>
+
+
+    <color name="red_badgeview">#d3321b</color>
+
+    <!--toast-->
+    <color name="toast_normal">#CC000000</color>
+    <color name="toast_light">#66000000</color>
+    <color name="toast_warn">#ccd9534f</color>
+    <!--toast-->
+
+    <!-- 我的 -->
+    <color name="me_dark_black_backround">#1479de</color>
+
+    <!--星期的颜色值-->
+    <color name="mn_calendar_color_text_week">#5E5E5E</color>
+    <!--日历Item的阳历的颜色值-->
+    <color name="mn_calendar_color_text_solar">#282828</color>
+    <!--日历Item的阴历的颜色值-->
+    <color name="mn_calendar_color_text_lunar">#979797</color>
+    <!--日历今天圆形背景-->
+    <color name="mn_calendar_color_today_bg">#282828</color>
+    <!--线-->
+    <color name="mn_calendar_color_line">#CCCCCC</color>
+    <!--白色-->
+    <color name="mn_calendar_color_white">#FFFFFF</color>
+    <!--不是当前月份的阳历的颜色-->
+    <color name="mn_calendar_color_other_month">#979797</color>
+    <!--白灰色-->
+    <color name="mn_calendar_color_gray_white">#dfdfdf</color>
+    <color name="leave_time">#18CBE3</color>
+
+    <!--考勤-->
+    <color name="attence_red">#FF6960</color>
+    <color name="attence_yellow">#FBB227</color>
+    <color name="attence_pink">#FDEBE8</color>
+
+    <!--进度条-->
+    <color name="no1_gray_light">#e2e2e2</color>
+    <color name="no2_orange">#fe7d44</color>
+    <color name="no3_white">#ffffff</color>
+    <color name="no4_black">#000000</color>
+    <color name="no5_gray_silver">#b4b4b4</color>
+
+    <color name="filename_black">#1F1F1F</color>
+
+    <!--filepicker-->
+    <color name="row_active_filepicker">#efefef</color>
+    <color name="colorPrimary_filepicker">#da4d26</color>
+    <color name="colorPrimaryDark_filepicker">#a93409</color>
+    <color name="colorAccent_filepicker">#FF4081</color>
+    <color name="bg_gray">#ecedef</color>
+    <color name="transparent_black">#94333232</color>
+
+    <color name="goal_tv_deadline">#F78D8D</color>
+    <color name="goal_tv_normal">#1886E3</color>
+
+    <drawable name="tab_gray">@color/bg_gray</drawable>
+    <drawable name="tab_white">@android:color/white</drawable>
+
+    <!-- 快速登录配色 -->
+    <color name="fast_login_start">#1ABC9C</color>
+    <color name="fast_login_end">#e74c3c</color>
+
+    <!-- 更新说明 -->
+    <color name="description_line_color">#1886E3</color>
+    <color name="description_textview_back">#f8f8f8</color>
+    <color name="description_content">#222</color>
+
+    <!-- 服务器错误dialog -->
+    <color name="server_error_back">#F3F3F3</color>
+
+    <!-- 截图dialog的背景 -->
+    <color name="screen_shots_dialog_btn_back">#60000000</color>
+
+    <!-- 会议选座配色 -->
+    <color name="meeting_seat_empty">#f0f0f0</color>
+    <color name="meeting_seat_busy">#d8d8d8</color>
+    <color name="meeting_seat_no">#ccc</color>
+    <color name="meeting_seat_selected">#8cc3f1</color>
+
+    <!-- 会议发布预约按钮 -->
+    <color name="meeting_public_reservation">#1886e3</color>
+
+    <!-- 会议室预约今明天按钮 -->
+    <color name="meeting_reservation_today">#1886E3</color>
+    <!-- 会议功能统一背景色 -->
+    <color name="meeting_back">#f8f8f8</color>
+    <color name="tab_checked">#ED6A2C</color>
+    <color name="tab_unchecked">#757575</color>
+</resources>
