@@ -14,8 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".components.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +25,7 @@
         <activity android:name=".components.index.activity.IndexActivity"></activity>
         <activity android:name=".components.billdetail.activity.BillDetailActivity"></activity>
         <activity android:name=".components.addbill.activity.AddBillActivity"></activity>
+        <activity android:name=".components.goodsdetail.activity.GoodsDetailActivity"></activity>
     </application>
 
 </manifest>

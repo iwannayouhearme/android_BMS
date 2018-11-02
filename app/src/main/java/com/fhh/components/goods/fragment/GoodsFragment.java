@@ -1,6 +1,7 @@
 package com.fhh.components.goods.fragment;
 
 import android.graphics.Rect;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +21,7 @@ import com.fhh.base.old.ItemViewDelegate;
 import com.fhh.base.old.ViewHolder;
 import com.fhh.components.goods.model.GoodsModel;
 import com.fhh.components.goods.model.GoodsTypeModel;
+import com.fhh.components.goodsdetail.activity.GoodsDetailActivity;
 import com.fhh.components.index.adapter.RecyclerViewAdapter;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -121,7 +123,7 @@ public class GoodsFragment extends BaseFragment {
             adapter.addItemViewDelegate(new ItemViewDelegate() {
                 @Override
                 public int getItemViewLayoutId() {
-                    return R.layout.user_item_rv;
+                    return R.layout.item_recycle_goods;
                 }
 
                 @Override
@@ -136,6 +138,22 @@ public class GoodsFragment extends BaseFragment {
                     holder.setText(R.id.goods_price, "￥" + goodsModel.getGoodsPrice());
                 }
             });
+            adapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                    Bundle bundle = new Bundle();
+                    GoodsModel goodsModel = (GoodsModel) mList.get(position);
+                    bundle.putString("goodsId", goodsModel.getId());
+                    openActivity(GoodsDetailActivity.class, bundle, 89);
+                }
+
+                @Override
+                public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                    return false;
+                }
+            });
+            goods_rv.setLayoutManager(layoutManager);
+            goods_rv.setAdapter(adapter);
         } else {
             List<String> mList = new ArrayList<>();
             mList.add("");
@@ -170,5 +188,15 @@ public class GoodsFragment extends BaseFragment {
         initHeaderView();
         setTopTitle("商品");
         showRightView(true, R.mipmap.meeting_icon_edit2x);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.top_iv_right1:
+                break;
+            default:
+                break;
+        }
     }
 }
