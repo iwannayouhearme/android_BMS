@@ -23,6 +23,54 @@ public class GoodsModel {
      * 商品价格
      */
     private String goodsPrice;
+    /**
+     * 商品全拼
+     */
+    private String fullPinyin;
+    /**
+     * 商品类型id
+     */
+    private String goodsTypeId;
+    /**
+     * 商品类型名称
+     */
+    private String goodsTypeName;
+    /**
+     * 创建时间
+     */
+    private String createTime;
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getFullPinyin() {
+        return fullPinyin;
+    }
+
+    public void setFullPinyin(String fullPinyin) {
+        this.fullPinyin = fullPinyin;
+    }
+
+    public String getGoodsTypeId() {
+        return goodsTypeId;
+    }
+
+    public void setGoodsTypeId(String goodsTypeId) {
+        this.goodsTypeId = goodsTypeId;
+    }
+
+    public String getGoodsTypeName() {
+        return goodsTypeName;
+    }
+
+    public void setGoodsTypeName(String goodsTypeName) {
+        this.goodsTypeName = goodsTypeName;
+    }
 
     public String getGoodsPrice() {
         return goodsPrice;

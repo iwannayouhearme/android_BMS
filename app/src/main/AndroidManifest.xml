@@ -26,6 +26,7 @@
         <activity android:name=".components.billdetail.activity.BillDetailActivity"></activity>
         <activity android:name=".components.addbill.activity.AddBillActivity"></activity>
         <activity android:name=".components.goodsdetail.activity.GoodsDetailActivity"></activity>
+        <activity android:name=".components.addgoods.activity.AddGoodsActivity"></activity>
     </application>
 
 </manifest>

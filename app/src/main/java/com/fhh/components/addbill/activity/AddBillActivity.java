@@ -56,12 +56,7 @@ public class AddBillActivity extends BaseActivity implements View.OnClickListene
         setContentView(R.layout.activity_add_bill);
         findView();
         init();
-        fullData();
     }
-
-    private void fullData() {
-    }
-
     private void findView() {
         initTopView();
         setTopTitle("添加账单");
@@ -104,13 +99,7 @@ public class AddBillActivity extends BaseActivity implements View.OnClickListene
         borrowerTypeModels.add(borrowerTypeModel);
         addBillModel.setBorrowerTypeId("0");
         addBillModel.setBorrowerTypeName("商品");
-        getData();
     }
-
-    private void getData() {
-
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -158,26 +147,32 @@ public class AddBillActivity extends BaseActivity implements View.OnClickListene
         //校验数据
         if (NullUtils.isNull(addBillModel.getBorrowerManId())) {
             Toast.makeText(getApplicationContext(), "请选择借款人！", Toast.LENGTH_SHORT).show();
+            return;
         }
         if (NullUtils.isNull(addBillModel.getBorrowerTypeId())) {
             Toast.makeText(getApplicationContext(), "请选择借款类型！", Toast.LENGTH_SHORT).show();
+            return;
         }
         //现金
         if ("1".equals(addBillModel.getBorrowerTypeId())) {
             if (NullUtils.isNull(cache_loan_amount.getText().toString())) {
                 Toast.makeText(getApplicationContext(), "请输入借款金额！", Toast.LENGTH_SHORT).show();
+                return;
             }
             addBillModel.setLoanAmount(cache_loan_amount.getText().toString());
         } else {
             //商品
             if (NullUtils.isNull(addBillModel.getGoodsTypeId())) {
                 Toast.makeText(getApplicationContext(), "请选择商品类型！", Toast.LENGTH_SHORT).show();
+                return;
             }
             if (NullUtils.isNull(addBillModel.getGoodsId())) {
                 Toast.makeText(getApplicationContext(), "请选择商品！", Toast.LENGTH_SHORT).show();
+                return;
             }
             if (NullUtils.isNull(addBillModel.getLoanAmount())) {
                 Toast.makeText(getApplicationContext(), "请选择价格！", Toast.LENGTH_SHORT).show();
+                return;
             }
         }
 

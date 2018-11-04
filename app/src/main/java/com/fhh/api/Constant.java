@@ -1,13 +1,13 @@
 package com.fhh.api;
 
 /**
+ * @author biubiubiu小浩
  * @description api常量类
- * @author  biubiubiu小浩
  * @date 2018/10/19 21:25
  **/
 public class Constant {
 
-    public class Url{
+    public class Url {
         /**
          * 本地地址
          */
@@ -54,5 +54,13 @@ public class Constant {
          * 添加账单
          */
         public static final String ADDBILL = "bill/addBillByAdmin";
+        /**
+         * 获取商品详情
+         */
+        public static final String GETGOODSDETAILBYID = "goods/getGoodsInfoById";
+        /**
+         * 添加商品
+         */
+        public static final String ADDGOODS = "goods/addGoods";
     }
 }

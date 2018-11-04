@@ -1,5 +1,6 @@
 package com.fhh.components.goods.fragment;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -19,6 +21,7 @@ import com.fhh.api.Constant;
 import com.fhh.base.BaseFragment;
 import com.fhh.base.old.ItemViewDelegate;
 import com.fhh.base.old.ViewHolder;
+import com.fhh.components.addgoods.activity.AddGoodsActivity;
 import com.fhh.components.goods.model.GoodsModel;
 import com.fhh.components.goods.model.GoodsTypeModel;
 import com.fhh.components.goodsdetail.activity.GoodsDetailActivity;
@@ -83,6 +86,8 @@ public class GoodsFragment extends BaseFragment {
 
                                 }
                             });
+                        } else {
+                            Toast.makeText(getActivity(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -99,6 +104,8 @@ public class GoodsFragment extends BaseFragment {
                         if ("true".equals(jsonObject.getString("success"))) {
                             goodsModels = JSONArray.parseArray(jsonObject.getString("data"), GoodsModel.class);
                             fullData(goodsModels);
+                        } else {
+                            Toast.makeText(getActivity(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -194,6 +201,8 @@ public class GoodsFragment extends BaseFragment {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.top_iv_right1:
+                Intent intent = new Intent(getActivity(),AddGoodsActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;

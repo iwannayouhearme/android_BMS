@@ -24,40 +24,6 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/layout_goods_name_full_pinyin"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#FF2600" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="商品全拼"
-                        android:textColor="@color/black" />
-
-
-                    <TextView
-                        android:id="@+id/goods_name_full_pinyin"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:gravity="end"
-                        android:hint="加载中..."
-                        android:singleLine="true"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/gray_text" />
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/layout_goods_name"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
@@ -80,6 +46,40 @@
 
                     <TextView
                         android:id="@+id/goods_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:hint="加载中..."
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_goods_name_full_pinyin"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF2600" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="商品全拼"
+                        android:textColor="@color/black" />
+
+
+                    <TextView
+                        android:id="@+id/goods_name_full_pinyin"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
