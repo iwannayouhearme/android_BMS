@@ -144,7 +144,7 @@ public class AddGoodsActivity extends BaseActivity {
                         JSONObject jsonObject = JSONObject.parseObject(response.body());
                         if ("true".equals(jsonObject.getString("success"))) {
                             Toast.makeText(getApplicationContext(), "添加成功！", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(AddGoodsActivity.this, GoodsFragment.class);
+                            Intent intent = new Intent(AddGoodsActivity.this, MainActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();

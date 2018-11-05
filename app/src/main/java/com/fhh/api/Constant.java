@@ -55,6 +55,10 @@ public class Constant {
          */
         public static final String ADDBILL = "bill/addBillByAdmin";
         /**
+         * 更新账单
+         */
+        public static final String UPDATEBILL = "bill/updateBill";
+        /**
          * 获取商品详情
          */
         public static final String GETGOODSDETAILBYID = "goods/getGoodsInfoById";

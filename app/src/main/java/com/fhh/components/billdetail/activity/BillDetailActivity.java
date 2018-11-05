@@ -1,6 +1,7 @@
 package com.fhh.components.billdetail.activity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.fhh.api.Constant;
 import com.fhh.base.BaseActivity;
 import com.fhh.base.DialogView;
 import com.fhh.components.index.model.UserBillListModel;
+import com.fhh.components.updatebill.activity.UpdateBillActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -122,7 +124,9 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
     }
 
     private void updateBill() {
-
+        Intent intent = new Intent(getApplicationContext(), UpdateBillActivity.class);
+        intent.putExtra("billId", billId);
+        startActivity(intent);
     }
 
     private void payForBill() {
