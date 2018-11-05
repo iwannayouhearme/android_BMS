@@ -66,5 +66,13 @@ public class Constant {
          * 添加商品
          */
         public static final String ADDGOODS = "goods/addGoods";
+        /**
+         * 更新商品
+         */
+        public static final String UPDATEGOODS = "goods/updateGoods";
+        /**
+         * 删除商品
+         */
+        public static final String DELGOODS = "goods/delGoods";
     }
 }

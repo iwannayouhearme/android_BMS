@@ -1,5 +1,6 @@
 package com.fhh.components.goodsdetail.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,10 +8,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
+import com.fhh.MainActivity;
 import com.fhh.R;
 import com.fhh.api.Constant;
 import com.fhh.base.BaseActivity;
 import com.fhh.components.goods.model.GoodsModel;
+import com.fhh.components.updategoods.UpdateGoodsActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -54,6 +57,8 @@ public class GoodsDetailActivity extends BaseActivity {
         create_time = findViewById(R.id.create_time);
         update_goods = findViewById(R.id.update_goods);
         del_goods = findViewById(R.id.del_goods);
+        update_goods.setOnClickListener(this);
+        del_goods.setOnClickListener(this);
     }
 
     private void fullData() {
@@ -88,8 +93,37 @@ public class GoodsDetailActivity extends BaseActivity {
             case R.id.top_iv_left:
                 backbtn(v);
                 break;
+            case R.id.update_goods:
+                Intent intent = new Intent(getApplicationContext(), UpdateGoodsActivity.class);
+                intent.putExtra("goodsId", goodsId);
+                startActivity(intent);
+                break;
+            case R.id.del_goods:
+                delGoods();
+                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent1);
+                break;
             default:
                 break;
         }
+    }
+
+    private void delGoods() {
+        OkGo.<String>post(Constant.Url.BASE + Constant.Url.DELGOODS)
+                .tag(this)
+                .isMultipart(true)
+                .retryCount(3)
+                .params("goodsIds", goodsId)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        JSONObject jsonObject = JSONObject.parseObject(response.body());
+                        if ("true".equals(jsonObject.getString("success"))) {
+                            Toast.makeText(getApplicationContext(), "删除成功", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }

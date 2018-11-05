@@ -1,4 +1,4 @@
-package com.fhh.components.addgoods.activity;
+package com.fhh.components.updategoods;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import com.fhh.base.BaseActivity;
 import com.fhh.common.ISingleChoiceModel;
 import com.fhh.common.SingleChoiceDialog;
 import com.fhh.components.addbill.model.GoodsTypeModel;
-import com.fhh.components.addgoods.model.AddGoodsModel;
+import com.fhh.components.goods.model.GoodsModel;
 import com.fhh.utils.NullUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -29,38 +29,73 @@ import java.util.List;
 
 /**
  * @author biubiubiu小浩
- * @description 添加商品
- * @date 2018/11/4 15:25
+ * @description 更新商品
+ * @date 2018/11/5 19:56
  **/
-public class AddGoodsActivity extends BaseActivity {
+public class UpdateGoodsActivity extends BaseActivity {
 
-    private Button add_goods;
+    private Button update_goods;
     private TextView goods_type;
     private EditText goods_name, cache_loan_amount;
     private LinearLayout goods_type_layout;
     private SingleChoiceDialog goodsTypeChoiceDialog;
     private List<GoodsTypeModel> goodsTypeModels;
-    private Activity addGoodsActivity;
-    private AddGoodsModel addGoodsModel = new AddGoodsModel();
+    private Activity upDateGoodsActivity;
+    private GoodsModel goodsModel;
+    private Bundle bundle;
+    private String goodsId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_goods);
-        addGoodsActivity = this;
+        setContentView(R.layout.activity_update_goods);
+        upDateGoodsActivity = this;
         findView();
+        init();
+    }
+
+    /**
+     * 初始化数据
+     *
+     * @author biubiubiu小浩
+     * @date 2018/11/5 19:59
+     **/
+    private void init() {
+        bundle = getIntent().getExtras();
+        goodsId = bundle.getString("goodsId");
+        OkGo.<String>get(Constant.Url.BASE + Constant.Url.GETGOODSDETAILBYID)
+                .tag(this)
+                .params("goodsId", goodsId)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        JSONObject jsonObject = JSONObject.parseObject(response.body());
+                        if ("true".equals(jsonObject.getString("success"))) {
+                            goodsModel = JSONObject.parseObject(jsonObject.getString("data"), GoodsModel.class);
+                            fullData(goodsModel);
+                        } else {
+                            Toast.makeText(getApplicationContext(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+    private void fullData(GoodsModel goodsModel) {
+        goods_type.setText(goodsModel.getGoodsTypeName());
+        cache_loan_amount.setText(goodsModel.getGoodsPrice());
+        goods_name.setText(goodsModel.getGoodsName());
     }
 
     private void findView() {
         initTopView();
-        setTopTitle("添加商品");
+        setTopTitle("更新商品");
         showLeftView(true);
-        add_goods = findViewById(R.id.add_goods);
+        update_goods = findViewById(R.id.update_goods);
         goods_type = findViewById(R.id.goods_type);
         goods_name = findViewById(R.id.goods_name);
         cache_loan_amount = findViewById(R.id.cache_loan_amount);
         goods_type_layout = findViewById(R.id.goods_type_layout);
-        add_goods.setOnClickListener(this);
+        update_goods.setOnClickListener(this);
         goods_type_layout.setOnClickListener(this);
     }
 
@@ -74,8 +109,8 @@ public class AddGoodsActivity extends BaseActivity {
                     goodsTypeChoiceDialog.show();
                 }
                 break;
-            case R.id.add_goods:
-                addGoods();
+            case R.id.update_goods:
+                updateGoods();
                 break;
             case R.id.top_iv_left:
                 backbtn(v);
@@ -99,12 +134,12 @@ public class AddGoodsActivity extends BaseActivity {
                                 return;
                             }
                             if (goodsTypeChoiceDialog == null) {
-                                goodsTypeChoiceDialog = new SingleChoiceDialog(addGoodsActivity, "请选择商品类型", NullUtils.filterEmpty(addGoodsModel.getGoodsTypeId()), goodsTypeModels, new SingleChoiceDialog.ISingleChoiceDialog() {
+                                goodsTypeChoiceDialog = new SingleChoiceDialog(upDateGoodsActivity, "请选择商品类型", NullUtils.filterEmpty(goodsModel.getGoodsTypeId()), goodsTypeModels, new SingleChoiceDialog.ISingleChoiceDialog() {
                                     @Override
                                     public void onItemClickForSingleChoiceDialog(ISingleChoiceModel singleChoiceModel, int position) {
                                         goods_type.setText(singleChoiceModel.getItemTitle());
-                                        addGoodsModel.setGoodsTypeName(singleChoiceModel.getItemTitle());
-                                        addGoodsModel.setGoodsTypeId(singleChoiceModel.getItemKey());
+                                        goodsModel.setGoodsTypeName(singleChoiceModel.getItemTitle());
+                                        goodsModel.setGoodsTypeId(singleChoiceModel.getItemKey());
                                     }
                                 });
                                 goodsTypeChoiceDialog.show();
@@ -116,9 +151,9 @@ public class AddGoodsActivity extends BaseActivity {
                 });
     }
 
-    private void addGoods() {
+    private void updateGoods() {
         //校验数据
-        if (NullUtils.isNull(addGoodsModel.getGoodsTypeId())) {
+        if (NullUtils.isNull(goodsModel.getGoodsTypeId())) {
             Toast.makeText(getApplicationContext(), "请选择商品类型！", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -130,20 +165,21 @@ public class AddGoodsActivity extends BaseActivity {
             Toast.makeText(getApplicationContext(), "请输入商品价格！", Toast.LENGTH_SHORT).show();
             return;
         }
-        OkGo.<String>post(Constant.Url.BASE + Constant.Url.ADDGOODS)
+        OkGo.<String>post(Constant.Url.BASE + Constant.Url.UPDATEGOODS)
                 .tag(this)
                 .isMultipart(true)
                 .retryCount(3)
+                .params("goodsId", goodsId)
                 .params("goodsName", goods_name.getText().toString())
                 .params("goodsPrice", cache_loan_amount.getText().toString())
-                .params("goodsTypeId", addGoodsModel.getGoodsTypeId())
+                .params("goodsTypeId", goodsModel.getGoodsTypeId())
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
                         JSONObject jsonObject = JSONObject.parseObject(response.body());
                         if ("true".equals(jsonObject.getString("success"))) {
-                            Toast.makeText(getApplicationContext(), "添加成功！", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(AddGoodsActivity.this, MainActivity.class);
+                            Toast.makeText(getApplicationContext(), "更新成功！", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(UpdateGoodsActivity.this, MainActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
