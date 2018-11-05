@@ -60,6 +60,7 @@ public class AddBillActivity extends BaseActivity implements View.OnClickListene
     private void findView() {
         initTopView();
         setTopTitle("添加账单");
+        showLeftView(true);
         borrower_man = findViewById(R.id.borrower_man);
         borrower_type = findViewById(R.id.borrower_type);
         cache_loan_amount = findViewById(R.id.cache_loan_amount);
@@ -137,6 +138,9 @@ public class AddBillActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.activity_add_bill:
                 addBill();
+                break;
+            case R.id.top_iv_left:
+                backbtn(v);
                 break;
             default:
                 break;

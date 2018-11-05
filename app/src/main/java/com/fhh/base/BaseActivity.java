@@ -186,6 +186,17 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
             }
         }
     }
+
+    public void showLeftView(boolean show) {
+        if (mTopIvLeft != null) {
+            if (show) {
+                mTopIvLeft.setVisibility(View.VISIBLE);
+            } else {
+                mTopIvLeft.setVisibility(View.GONE);
+            }
+        }
+    }
+
     public TextView getTopTitle() {
         return mTopTitle;
     }

@@ -88,6 +88,7 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
     private void findView() {
         initTopView();
         setTopTitle("账单详情");
+        showLeftView(true);
         borrower_man = findViewById(R.id.borrower_man);
         borrower_type = findViewById(R.id.borrower_type);
         loan_amount = findViewById(R.id.loan_amount);
@@ -111,6 +112,9 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.update_bill:
                 updateBill();
+                break;
+            case R.id.top_iv_left:
+                backbtn(v);
                 break;
             default:
                 break;

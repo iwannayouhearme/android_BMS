@@ -164,7 +164,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     }
 
     public void showRightView(boolean show, int resId) {
-        if (mTopIvLeft != null) {
+        if (mTopIvRight != null) {
             if (show) {
                 mTopIvRight.setVisibility(View.VISIBLE);
                 mTopIvRight.setImageResource(resId);
@@ -181,7 +181,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         mTopIvRight = (ImageView) rootView.findViewById(R.id.top_iv_right1);
         mTopTvRight = (TextView) rootView.findViewById(R.id.top_tv_right1);
         mTopLlHeader = (RelativeLayout) rootView.findViewById(R.id.top_ll_header1);
-        mTopTvRight.setOnClickListener(this);
+        mTopIvLeft.setOnClickListener(this);
         mTopIvRight.setOnClickListener(this);
         //现在的状态栏高度减去正常的状态栏高度(px)
         if (mTopLlHeader != null) {

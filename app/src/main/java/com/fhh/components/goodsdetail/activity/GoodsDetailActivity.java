@@ -1,11 +1,11 @@
 package com.fhh.components.goodsdetail.activity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.fhh.R;
 import com.fhh.api.Constant;
@@ -46,6 +46,7 @@ public class GoodsDetailActivity extends BaseActivity {
     private void findView() {
         initTopView();
         setTopTitle("商品详情");
+        showLeftView(true);
         goods_name = findViewById(R.id.goods_name);
         goods_name_full_pinyin = findViewById(R.id.goods_name_full_pinyin);
         goods_price = findViewById(R.id.goods_price);
@@ -79,5 +80,16 @@ public class GoodsDetailActivity extends BaseActivity {
         goods_price.setText(goodsModel.getGoodsPrice());
         goods_type.setText(goodsModel.getGoodsTypeName());
         create_time.setText(goodsModel.getCreateTime());
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.top_iv_left:
+                backbtn(v);
+                break;
+            default:
+                break;
+        }
     }
 }

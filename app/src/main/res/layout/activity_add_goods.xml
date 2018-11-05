@@ -68,18 +68,19 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="商品"
+                    android:layout_weight="1"
+                    android:text="商品名称"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
 
                 <EditText
                     android:id="@+id/goods_name"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@drawable/login_edittext"
                     android:ellipsize="end"
                     android:gravity="end"
                     android:hint="请输入商品名称"
@@ -88,6 +89,7 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/gray_text"
                     android:textSize="15sp" />
+
             </LinearLayout>
 
             <LinearLayout

@@ -20,6 +20,7 @@ import com.fhh.common.ISingleChoiceModel;
 import com.fhh.common.SingleChoiceDialog;
 import com.fhh.components.addbill.model.GoodsTypeModel;
 import com.fhh.components.addgoods.model.AddGoodsModel;
+import com.fhh.components.goods.fragment.GoodsFragment;
 import com.fhh.utils.NullUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -36,7 +37,7 @@ public class AddGoodsActivity extends BaseActivity {
 
     private Button add_goods;
     private TextView goods_type;
-    private EditText goods_name,cache_loan_amount;
+    private EditText goods_name, cache_loan_amount;
     private LinearLayout goods_type_layout;
     private SingleChoiceDialog goodsTypeChoiceDialog;
     private List<GoodsTypeModel> goodsTypeModels;
@@ -47,12 +48,14 @@ public class AddGoodsActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_goods);
+        addGoodsActivity = this;
         findView();
     }
 
     private void findView() {
         initTopView();
         setTopTitle("添加商品");
+        showLeftView(true);
         add_goods = findViewById(R.id.add_goods);
         goods_type = findViewById(R.id.goods_type);
         goods_name = findViewById(R.id.goods_name);
@@ -75,6 +78,9 @@ public class AddGoodsActivity extends BaseActivity {
             case R.id.add_goods:
                 addGoods();
                 break;
+            case R.id.top_iv_left:
+                backbtn(v);
+                break;
             default:
                 break;
         }
@@ -93,15 +99,13 @@ public class AddGoodsActivity extends BaseActivity {
                                 Toast.makeText(getApplicationContext(), "暂无商品类型，请先添加商品类型！", Toast.LENGTH_SHORT).show();
                                 return;
                             }
-                            addGoodsModel.setGoodsTypeId(goodsTypeModels.get(0).getId());
-                            addGoodsModel.setGoodsTypeName(goodsTypeModels.get(0).getGoodsTypeName());
                             if (goodsTypeChoiceDialog == null) {
                                 goodsTypeChoiceDialog = new SingleChoiceDialog(addGoodsActivity, "请选择商品类型", NullUtils.filterEmpty(addGoodsModel.getGoodsTypeId()), goodsTypeModels, new SingleChoiceDialog.ISingleChoiceDialog() {
                                     @Override
                                     public void onItemClickForSingleChoiceDialog(ISingleChoiceModel singleChoiceModel, int position) {
                                         goods_type.setText(singleChoiceModel.getItemTitle());
-                                        addGoodsModel.setGoodsTypeId(singleChoiceModel.getItemTitle());
-                                        addGoodsModel.setGoodsTypeName(singleChoiceModel.getItemKey());
+                                        addGoodsModel.setGoodsTypeName(singleChoiceModel.getItemTitle());
+                                        addGoodsModel.setGoodsTypeId(singleChoiceModel.getItemKey());
                                     }
                                 });
                                 goodsTypeChoiceDialog.show();
@@ -140,7 +144,7 @@ public class AddGoodsActivity extends BaseActivity {
                         JSONObject jsonObject = JSONObject.parseObject(response.body());
                         if ("true".equals(jsonObject.getString("success"))) {
                             Toast.makeText(getApplicationContext(), "添加成功！", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(AddGoodsActivity.this, MainActivity.class);
+                            Intent intent = new Intent(AddGoodsActivity.this, GoodsFragment.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
