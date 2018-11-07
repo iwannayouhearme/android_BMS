@@ -59,6 +59,10 @@ public class Constant {
          */
         public static final String UPDATEGOODSTYPE = "goodsType/updateGoodsTypeById";
         /**
+         * 添加商品类型
+         */
+        public static final String ADDGOODSTYPE = "goodsType/addGoodsType";
+        /**
          * 获取所有商品
          */
         public static final String GETALLGOODSBYGOODSTYPEID = "goods/getGoodsListByGoodsTypeId";

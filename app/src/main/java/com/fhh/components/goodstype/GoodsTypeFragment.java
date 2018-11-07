@@ -12,11 +12,13 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.fhh.MainActivity;
 import com.fhh.R;
 import com.fhh.api.Constant;
 import com.fhh.base.BaseFragment;
 import com.fhh.base.old.ItemViewDelegate;
 import com.fhh.base.old.ViewHolder;
+import com.fhh.components.addgoodstype.AddGoodsTypeActivity;
 import com.fhh.components.goods.model.GoodsTypeModel;
 import com.fhh.components.goodstype.adapter.GoodsTypeAdapter;
 import com.fhh.components.index.adapter.RecyclerViewAdapter;
@@ -54,6 +56,8 @@ public class GoodsTypeFragment extends BaseFragment {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.top_iv_right1:
+                Intent intent = new Intent(getActivity(), AddGoodsTypeActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
@@ -71,6 +75,8 @@ public class GoodsTypeFragment extends BaseFragment {
                         JSONObject jsonObject = JSONObject.parseObject(response.body());
                         if ("true".equals(jsonObject.getString("success"))) {
                             Toast.makeText(getActivity(), "删除成功！", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(getActivity(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
                         }
