@@ -47,6 +47,18 @@ public class Constant {
          */
         public static final String GETALLGOODSTYPE = "goodsType/getGoodsTypeList";
         /**
+         * 删除商品类型
+         */
+        public static final String DELGOODSTYPE = "goodsType/delGoodsType";
+        /**
+         * 根据商品id获取商品详情
+         */
+        public static final String GETGOODSTYPEBYID = "goodsType/getGoodsTypeDetailById";
+        /**
+         * 更新商品类型
+         */
+        public static final String UPDATEGOODSTYPE = "goodsType/updateGoodsTypeById";
+        /**
          * 获取所有商品
          */
         public static final String GETALLGOODSBYGOODSTYPEID = "goods/getGoodsListByGoodsTypeId";

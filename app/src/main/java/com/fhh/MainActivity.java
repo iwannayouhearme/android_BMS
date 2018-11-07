@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.fhh.components.goods.fragment.GoodsFragment;
+import com.fhh.components.goodstype.GoodsTypeFragment;
 import com.fhh.components.index.Fragment.HomeFragment;
 import com.fhh.components.index.Fragment.IndexFragment;
 
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         List<Fragment> list = new ArrayList<>();
         list.add(HomeFragment.newInstance());
         list.add(GoodsFragment.newInstance());
-        list.add(IndexFragment.newInstance("卡片"));
+        list.add(GoodsTypeFragment.newInstance());
         list.add(IndexFragment.newInstance("个人"));
         viewPagerAdapter.setList(list);
 
