@@ -23,6 +23,14 @@ public class Constant {
          */
         public static final String LOGIN = "user/login";
         /**
+         * 获取所有用户列表
+         */
+        public static final String GETUSERLIST = "user/getUserList";
+        /**
+         * 添加用户
+         */
+        public static final String ADDUSER = "user/addUser";
+        /**
          * 获取首页数据
          */
         public static final String GETINDEX = "bill/getIndexPage";

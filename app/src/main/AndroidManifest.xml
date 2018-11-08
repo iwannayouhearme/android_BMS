@@ -22,15 +22,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".components.index.activity.IndexActivity"></activity>
-        <activity android:name=".components.billdetail.activity.BillDetailActivity"></activity>
-        <activity android:name=".components.addbill.activity.AddBillActivity"></activity>
-        <activity android:name=".components.goodsdetail.activity.GoodsDetailActivity"></activity>
-        <activity android:name=".components.addgoods.activity.AddGoodsActivity"></activity>
-        <activity android:name=".components.updatebill.activity.UpdateBillActivity"></activity>
-        <activity android:name=".components.updategoods.UpdateGoodsActivity"></activity>
-        <activity android:name=".components.updategoodstype.UpdateGoodsTypeActivity"></activity>
-        <activity android:name=".components.addgoodstype.AddGoodsTypeActivity"></activity>
+        <activity android:name=".components.bill.index.activity.IndexActivity"></activity>
+        <activity android:name=".components.bill.activity.BillDetailActivity"></activity>
+        <activity android:name=".components.bill.addbill.activity.AddBillActivity"></activity>
+        <activity android:name=".components.goods.goodsdetail.activity.GoodsDetailActivity"></activity>
+        <activity android:name=".components.goods.addgoods.activity.AddGoodsActivity"></activity>
+        <activity android:name=".components.bill.updatebill.activity.UpdateBillActivity"></activity>
+        <activity android:name=".components.goods.updategoods.UpdateGoodsActivity"></activity>
+        <activity android:name=".components.goodstype.updategoodstype.UpdateGoodsTypeActivity"></activity>
+        <activity android:name=".components.goodstype.addgoodstype.AddGoodsTypeActivity"></activity>
+        <activity android:name=".components.user.adduser.AddUserActivity"></activity>
     </application>
 
 </manifest>

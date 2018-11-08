@@ -8,10 +8,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.fhh.components.goods.fragment.GoodsFragment;
-import com.fhh.components.goodstype.GoodsTypeFragment;
-import com.fhh.components.index.Fragment.HomeFragment;
-import com.fhh.components.index.Fragment.IndexFragment;
+import com.fhh.components.goods.index.fragment.GoodsFragment;
+import com.fhh.components.goodstype.index.GoodsTypeFragment;
+import com.fhh.components.bill.index.Fragment.HomeFragment;
+import com.fhh.components.bill.index.Fragment.IndexFragment;
+import com.fhh.components.user.UserFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(HomeFragment.newInstance());
         list.add(GoodsFragment.newInstance());
         list.add(GoodsTypeFragment.newInstance());
-        list.add(IndexFragment.newInstance("个人"));
+        list.add(UserFragment.newInstance());
         viewPagerAdapter.setList(list);
 
     }
